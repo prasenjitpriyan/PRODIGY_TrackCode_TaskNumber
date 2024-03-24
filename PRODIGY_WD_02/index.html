@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Stopwatch</title>
+</head>
+
+<body>
+  <div class="stopwatch-container">
+    <div class="stopwatch">
+      <span id="hours" class="time-placeholder">00</span>:<span id="minutes" class="time-placeholder">00</span>:<span
+        id="seconds" class="time-placeholder">00</span>
+    </div>
+
+    <div class="controls">
+      <button id="startStopButton">Start</button>
+      <button id="resetButton" disabled>Reset</button>
+      <button id="settingsButton">Settings</button>
+    </div>
+  </div>
+
+  <div class="modal" id="settingsModal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Breakpoint Options</h2>
+      <form class="breakpoint-form">
+        <fieldset class="breakpoint-option">
+          <legend>Breakpoint #1</legend>
+          <label for="color1">Color:</label>
+          <input type="color" id="color1" name="color1" value="#008000">
+          <label for="hour1">Hour:</label>
+          <input type="number" id="hour1" name="hour1" min="0" max="24" value="0">
+          <label for="minute1">Minute:</label>
+          <input type="number" id="minute1" name="minute1" min="0" max="59" value="20">
+          <label for="second1">Second:</label>
+          <input type="number" id="second1" name="second1" min="0" max="59" value="0">
+        </fieldset>
+
+        <fieldset class="breakpoint-option">
+          <legend>Breakpoint #2</legend>
+          <label for="color2">Color:</label>
+          <input type="color" id="color2" name="color2" value="#FFD700">
+          <label for="hour2">Hour:</label>
+          <input type="number" id="hour2" name="hour2" min="0" max="24" value="0">
+          <label for="minute2">Minute:</label>
+          <input type="number" id="minute2" name="minute2" min="0" max="59" value="30">
+          <label for="second2">Second:</label>
+          <input type="number" id="second2" name="second2" min="0" max="59" value="0">
+        </fieldset>
+
+        <fieldset class="breakpoint-option">
+          <legend>Breakpoint #3</legend>
+          <label for="color3">Color:</label>
+          <input type="color" id="color3" name="color3" value="#DC143C">
+          <label for="hour3">Hour:</label>
+          <input type="number" id="hour3" name="hour3" min="0" max="24" value="0">
+          <label for="minute3">Minute:</label>
+          <input type="number" id="minute3" name="minute3" min="0" max="59" value="35">
+          <label for="second3">Second:</label>
+          <input type="number" id="second3" name="second3" min="0" max="59" value="0">
+        </fieldset>
+
+        <!-- Add more sets of breakpoint options as needed -->
+
+        <input id="submitForm" type="submit" value="Save Breakpoints">
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

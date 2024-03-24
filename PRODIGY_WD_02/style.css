@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body {
+	margin: 0;
+	padding: 0;
+}
+.stopwatch-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	background-color: #ffffff;
+	font-family: 'Roboto', sans-serif;
+
+	transition-duration: 2.5s;
+}
+
+.stopwatch {
+	font-size: 12rem;
+	font-weight: bold;
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+.clock {
+	font-size: 4rem;
+	font-weight: bold;
+	display: inline-block;
+}
+
+.time-placeholder {
+	padding: 0 0.2em;
+}
+
+.controls {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	position: absolute;
+	bottom: 2rem;
+	gap: 1rem;
+}
+
+#startStopButton,
+#resetButton,
+#settingsButton {
+	padding: 10px 20px;
+	font-size: 1.2em;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s;
+
+	border: none;
+}
+
+#startStopButton[value='Start'] {
+	background: lime;
+}
+#startStopButton[value='Stop'] {
+	width: 100%;
+	color: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0);
+}
+#startStopButton:hover,
+#resetButton:enabled:hover,
+#settingsButton:enabled:hover {
+	background-color: #3498db;
+	color: #fff;
+}
+
+#resetButton:disabled,
+#settingsButton:disabled {
+	display: none;
+	cursor: default;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	font-family: 'Roboto', sans-serif;
+}
+
+.modal-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	padding: 1.5rem;
+	border-radius: 1rem;
+
+	& h2 {
+		text-align: center;
+		margin-bottom: 1.5rem;
+	}
+}
+
+.close {
+	position: absolute;
+	top: 1rem;
+	right: 1.5rem;
+	font-size: 2rem;
+	cursor: pointer;
+}
+
+.breakpoints-section {
+	text-align: center;
+}
+
+.breakpoint-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.breakpoint-option {
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	grid-gap: 0.25rem;
+
+	margin: 0.25rem 0;
+	padding: 0.5rem;
+
+	align-items: center;
+
+	border: 2px groove rgba(0, 0, 0, 0.1);
+	border-radius: 0.25rem;
+}
+
+label {
+	text-align: right;
+	margin-left: 1rem;
+
+	&:first-child {
+		margin-left: 0;
+	}
+}
+
+input[type='color'] {
+	margin: 0.25rem;
+	padding: 0 0.125rem;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+input[type='number'] {
+	font-size: 1rem;
+
+	margin: 0.25rem;
+	padding: 0.25rem;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+input[type='submit'] {
+	margin-top: 1.5rem;
+	padding: 1rem 2rem;
+	font-size: 1.2em;
+	font-weight: bold;
+	cursor: pointer;
+	background-color: #008800;
+	color: #fff;
+	border: none;
+	transition: background-color 0.3s;
+}
+
+input[type='submit']:hover {
+	background-color: #00bb00;
+}
